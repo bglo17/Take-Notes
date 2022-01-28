@@ -1,14 +1,16 @@
 const express = require ('express');
-const { v4: uuidv4 } = require('uuid');
+const v4: uuidv4  = require('uuid');
 const path = require('path');
-const app = express();
 const notes = require('./db/db.json');
-const { fstat } = require('fs');
+const fs = require('fs');
+const api = require ('./routes');
+
+const app = express();
 
 console.log(notes);
 
 const PORT = 3001;
-
+uuidv4();
 
 
 app.use(express.json());
